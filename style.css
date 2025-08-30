@@ -148,7 +148,7 @@ nav ul li a:hover::after {
 .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 70px;
     align-items: center;
 
 
@@ -443,16 +443,13 @@ form textarea {
  */
 .about-img {
     width: 100%;
-    /* makes it bigger and responsive */
     max-width: 400px;
-    /* control maximum size */
     border-radius: 15px;
-    border: #e6b1c1;
-    /* soft rounded corners (or 50% for circle) */
+    border: 2px solid #e6b1c1;
+    /* added thickness + style */
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     display: block;
     margin: 0 auto;
-    /* center the image */
 }
 
 /* Hover effect */
