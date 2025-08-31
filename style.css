@@ -148,7 +148,7 @@ nav ul li a:hover::after {
 .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 70px;
+    gap: 50px;
     align-items: center;
 
 
@@ -442,22 +442,19 @@ form textarea {
 
  */
 .about-img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 15px;
-    border: 3px solid #e6b1c1;
-    /* visible border */
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    /* normal shadow */
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    display: block;
-    margin: 0 auto;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 5px solid #f59fba;
+    object-fit: cover;
+    box-shadow: 0px 0px 30px rgba(255, 0, 79, 0.5);
+    margin-right: 80px;
 }
 
 /* Hover effect */
 .about-img:hover {
     transform: scale(1.1);
-    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 12px #f87ea5(0, 0, 0, 0.2);
     /* stronger shadow on hover */
     cursor: pointer;
 }
