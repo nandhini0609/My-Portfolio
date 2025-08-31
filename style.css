@@ -29,7 +29,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-
 }
 
 nav .logo {
@@ -143,6 +142,7 @@ nav ul li a:hover::after {
 /* === About Section === */
 #about {
     padding: 80px 0;
+    margin-top: 70px;
 }
 
 .row {
@@ -157,6 +157,7 @@ nav ul li a:hover::after {
 .col1 img {
     width: 300px;
     border-radius: 15px;
+
 }
 
 .col2 {
@@ -202,6 +203,7 @@ nav ul li a:hover::after {
 /* === Services Section === */
 #services {
     padding: 80px 0;
+    margin-top: 50px;
 }
 
 .services-list {
@@ -230,6 +232,7 @@ nav ul li a:hover::after {
 /* Portfolio Section */
 #portfolio {
     padding: 100px 0;
+    margin-top: 70px;
 }
 
 .container h1 {
@@ -318,6 +321,11 @@ nav ul li a:hover::after {
 }
 
 /* conact */
+#portfolio {
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
 .contact-left {
     flex-basis: 35%;
 }
@@ -360,7 +368,7 @@ nav ul li a:hover::after {
     border-radius: 6px;
     transition: 0.3s;
     cursor: pointer;
-    margin-left: 300px;
+
 }
 
 .contact-right form {
@@ -441,7 +449,7 @@ form textarea {
 /* css for small screen
 
  */
-.about-img {
+/* .about-img {
     width: 350px;
     height: 350px;
     border-radius: 50%;
@@ -449,7 +457,7 @@ form textarea {
     object-fit: cover;
     box-shadow: 0px 0px 30px rgba(255, 0, 79, 0.5);
     margin-right: 80px;
-}
+} */
 
 /* Hover effect */
 .about-img:hover {
@@ -457,4 +465,301 @@ form textarea {
     box-shadow: 0px 4px 12px #f87ea5(0, 0, 0, 0.2);
     /* stronger shadow on hover */
     cursor: pointer;
+
+}
+
+/* === Footer Styling === */
+footer {
+    background: #1a1a1a;
+    /* Box background */
+    color: #fff;
+    /* White text */
+    text-align: center;
+    padding: 20px;
+    margin: 50px auto 0 auto;
+    /* Center horizontally */
+    max-width: 100%;
+    /* Box width */
+    border-radius: 12px;
+    /* Rounded box */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    /* Shadow */
+
+    /* Accent border */
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+footer p:hover {
+    color: #fb3473;
+    /* Hover text effect */
+}
+
+#msg {
+    color: #61b752;
+    margin-top: 20px;
+    margin-left: 10%;
+    display: block;
+}
+
+/* resposive */
+/* === Responsive Fixes === */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .header-text {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .profile-img img {
+        margin: 20px auto;
+        width: 250px;
+        height: 250px;
+    }
+
+    .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .col2 {
+        margin-left: 0;
+    }
+
+    .about-img {
+        margin: 0 auto;
+        width: 250px;
+        height: 250px;
+    }
+
+    form input,
+    form textarea {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    #msg {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    footer {
+        margin: 20px;
+        padding: 15px;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    nav .logo {
+        width: 50px;
+    }
+
+    .header-text h1 {
+        font-size: 32px;
+    }
+
+    .header-text p {
+        font-size: 14px;
+    }
+
+    .profile-img img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .sub-title {
+        font-size: 28px;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+
+    .work-list {
+        grid-template-columns: 1fr;
+    }
+
+    .work-list img {
+        height: 160px;
+    }
+
+    #seeMoreBtn {
+        margin-left: 0;
+        display: block;
+        margin: 20px auto;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Responsive nav */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 50px;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: row;
+    }
+}
+
+/* Reduce spacing between sections */
+#about,
+#services,
+#portfolio,
+#contact {
+    padding: 40px 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .about-img {
+        max-width: 250px;
+        /* smaller on mobile */
+    }
+}
+
+.about-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.col-left {
+    flex: 1;
+}
+
+.col-right {
+    flex: 2;
+}
+
+.about-img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+/* ===== About Section Styling ===== */
+.about-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Image Container (Desktop) */
+.col-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-img {
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+    border: 2px solid #f0f0f0;
+    /* light border */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    /* soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Text Column */
+.col-right {
+    flex: 2;
+}
+
+/* ===== Mobile Responsive Design ===== */
+@media (max-width: 768px) {
+    .about-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Make image appear nicely between title and paragraph */
+    #mobile-img-placeholder {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+    }
+
+    .about-img {
+        width: 180px;
+        /* smaller for mobile */
+        border-radius: 50%;
+        /* circular image */
+        border: 2px solid #f7cfcf;
+        /* soft light border */
+        box-shadow: 0 4px 10px rgba(244, 197, 197, 0.12);
+        /* lighter shadow */
+    }
+
+    .col-right {
+        text-align: center;
+    }
 }

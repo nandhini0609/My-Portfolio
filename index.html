@@ -16,7 +16,11 @@
             <!-- Navigation -->
             <nav>
                 <img src="images/Nandhini__4_-removebg-preview (1).png" alt="Logo" class="logo">
-                <ul>
+                <!-- Hamburger button -->
+                <div class="hamburger" onclick="toggleMenu()">
+                    ☰
+                </div>
+                <ul id="nav-links">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
@@ -45,57 +49,75 @@
         </div>
     </div>
 
-    <!-- about -->
     <div id="about">
         <div class="container">
-            <div class="row">
-                <div class="col1">
-                    <img src="images/about.jpeg" class="about-img">
+            <div class="row about-row">
+                <!-- Image column -->
+                <div class="col-left" id="image-container">
+                    <img src="images/about.jpeg" class="about-img" id="about-img">
                 </div>
-                <div class="col2">
+
+                <!-- Text column -->
+                <div class="col-right" id="text-container">
                     <h1 class="sub-title">About Me</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ab excepturi dolore molestias iure
-                        assumenda. Ullam, enim similique sed impedit eos libero nesciunt adipisci dolores itaque fugit
-                        error quidem fugiat.
-                        Cupiditate veritatis similique voluptatum. Est soluta quas nam dolores illum iste illo, animi,
+
+                    <!-- Placeholder for mobile image -->
+                    <div id="mobile-img-placeholder"></div>
+
+                    <p>
+                        Hi, I'm Nandhini 👋, a passionate Front-End Developer and Python Enthusiast, currently in my
+                        final year of <strong>B.E. Computer Science Engineering</strong> at <strong>Gnanamani College of
+                            Technology</strong>.
+                        <br>
+                        I specialize in building modern, responsive, and user-friendly web applications using
+                        <strong>HTML, CSS, JavaScript, and React</strong>, and I also enjoy solving problems and
+                        automating tasks with <strong>Python</strong>.
+                        <br><br>
+                        Over the years, I’ve worked on multiple projects ranging from interactive websites to
+                        small-scale applications.
+                        <br>
+                        My goal is to grow as a <strong>Full-Stack Developer</strong> and contribute to impactful
+                        projects that combine creativity, problem-solving, and real-world usability. 🚀
                     </p>
 
+                    <!-- tabs -->
                     <div class="tab-title">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
                         <p class="tab-links" onclick="opentab('Experience')">Experience</p>
                         <p class="tab-links" onclick="opentab('Education')">Education</p>
                     </div>
+
                     <div class="tab-contents active-tab" id="skills">
                         <ul>
                             <li><span>FRONT-END</span><br>Developing Web/App interfaces</li>
                             <li><span>Web Development</span><br>Web app Development</li>
                             <li><span>Python</span><br>Python Basics</li>
-
                         </ul>
                     </div>
+
                     <div class="tab-contents" id="Experience">
                         <ul>
-                            <li><span>2024-2025</span><br>Worked on some Sites using(HTML-CSS)</li>
+                            <li><span>2024-2025</span><br>Worked on some Sites using (HTML-CSS)</li>
                             <li><span>(2025)</span><br>Developed sites using Javascript</li>
-                            <li><span> At Present</span><br>Working wth React and Python</li>
-
+                            <li><span>At Present</span><br>Working with React and Python</li>
                         </ul>
                     </div>
+
                     <div class="tab-contents" id="Education">
                         <ul>
-                            <li><span>2022-2026</span><br>B.E -Computer Science Engineering with CGPA of (80.0)</li>
+                            <li><span>2022-2026</span><br>B.E - Computer Science Engineering with CGPA of (80.0)</li>
                             <li><span>2021-2022</span><br>HSC in Mahendra matric hr/sec school and got percentage of
                                 (80.0%)</li>
                             <li><span>2019-2020</span><br>SSLC in Mahendra matric hr/sec school and got percentage of
                                 (99.0%)</li>
-
-
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
     <div id="services">
         <div class="container">
             <h1 class="sub-title">My Services</h1>
@@ -181,12 +203,18 @@
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
+                    <span id="msg"></span>
                 </div>
             </div>
 
         </div>
     </div>
-
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>© 2025 Nandhini | Made with my skills 🌸</p>
+        </div>
+    </footer>
 
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
@@ -208,15 +236,58 @@
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbykG97Pl3SqDNP_9PuZdyAjsXp0hzl1h2wkCmNB6WvzZLEH95_pSV3Wm9Axix-9ULA/exec'
         const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
 
         form.addEventListener('submit', e => {
             e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) }).then(response => console.log('Success!', response)).catch(error => console.error('Error!', error.message));
-
-
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "✅ Message Sent Successfully!"
+                    form.reset();
+                })
+                .catch(error => {
+                    msg.innerHTML = "❌ Something went wrong. Please try again."
+                    console.error('Error!', error.message)
+                });
         })
-
     </script>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById("nav-links");
+            if (nav) {
+                nav.classList.toggle("show");
+            }
+        }
+    </script>
+
+
+    <script>
+        function moveImage() {
+            const screenWidth = window.innerWidth;
+            const img = document.getElementById("about-img");
+            const imgContainer = document.getElementById("image-container");
+            const mobilePlaceholder = document.getElementById("mobile-img-placeholder");
+
+            if (screenWidth <= 768) {
+                // Move image inside mobile placeholder (after About Me title)
+                if (!mobilePlaceholder.contains(img)) {
+                    mobilePlaceholder.appendChild(img);
+                }
+            } else {
+                // Move image back to the left column (desktop view)
+                if (!imgContainer.contains(img)) {
+                    imgContainer.appendChild(img);
+                }
+            }
+        }
+
+        // Run on load and resize
+        window.addEventListener("load", moveImage);
+        window.addEventListener("resize", moveImage);
+    </script>
+
+
+
 </body>
 
 
