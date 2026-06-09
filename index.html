@@ -40,8 +40,8 @@
                     <br>
                     <h1>
                         Hi, I'm <span>Nandhini</span><br>
-                        Working on Front-end<br>
-                        Development
+                        I Am Working On Front End Development<br>
+                        And Aspiring Data Analyst
                     </h1>
                 </div>
 
@@ -95,16 +95,20 @@
                         <ul>
                             <li><span>FRONT-END</span><br>Developing Web/App interfaces</li>
                             <li><span>Web Development</span><br>Web app Development</li>
-                            <li><span>Python</span><br>Python Basics</li>
+                            <li><span>Python</span><br>Python Developer</li>
                             <li><span>SQL</span><br>Database Management</li>
+                            <li><span>Data Analyst</span><br>Data cleaning, visualization, and reporting</li>
+                            <li><span>Excel</span><br>Advanced formulas, charts, and dashboards</li>
+                            <li><span>Tableau</span><br>Interactive dashboard creation</li>
+                            <li><span>Power BI</span><br>Business intelligence reports and insights</li>
                         </ul>
                     </div>
 
                     <div class="tab-contents" id="Experience">
                         <ul>
-                            <li><span>2024-2025</span><br>Worked on some Sites using (HTML-CSS)</li>
-                            <li><span>(2025)</span><br>Developed sites using Javascript</li>
-                            <li><span>At Present</span><br>Working with React and Python</li>
+                            <li><span>Code Alpha - 3 Months</span><br>Web Development Intern</li>
+                            <li><span>Manvian - 1 Month</span><br>Full Stack Intern</li>
+                            <li><span>Tech Vedu - 1 Month</span><br>Web Development Intern</li>
                         </ul>
                     </div>
 
@@ -139,10 +143,9 @@
 
                 <!-- Service 2 -->
                 <div>
-                    <h2>🎨 Web Design</h2>
-                    <p>I design beautiful, modern, and user-friendly websites that blend creativity with functionality.
-                        My goal is to create designs that not only look stunning but also offer smooth navigation and an
-                        engaging user experience.</p>
+                    <h2>📊 Aspiring Data Analyst</h2>
+                    <p>I am building strong skills in data analysis using Excel, Tableau, and Power BI to create clear,
+                        actionable dashboards and insights that support better decision-making.</p>
                     <a href="#">Learn More</a>
                 </div>
 
@@ -164,6 +167,13 @@
         <div class="container">
             <h1 class="sub-title">My Work</h1>
             <div class="work-list">
+
+                <div>
+                    <img src="images/Qp generator.png" alt="">
+                    <h3>Question Paper Generator</h3>
+                    <p>Question paper generator using(Html,Css,javascript,React) with Fast api Integration </p>
+                    <a href="https://question-paper-generator-frontend.vercel.app/">View Project</a>
+                </div>
                 <div>
                     <img src="images/Nmart ecommerce website.png" alt="">
                     <h3>Nmart Ecommerce Website</h3>
@@ -172,10 +182,10 @@
                     <a href="https://react-ecommerce-website-pearl.vercel.app/">View Project</a>
                 </div>
                 <div>
-                    <img src="images/Qp generator.png" alt="">
-                    <h3>Question Paper Generator</h3>
-                    <p>Question paper generator using(Html,Css,javascript,React) with Fast api Integration </p>
-                    <a href="https://question-paper-generator-frontend.vercel.app/">View Project</a>
+                    <img src="images/gym fitness.png" alt="">
+                    <h3>#3G fitness studio website</h3>
+                    <p>Gym client website using (Html,Css,javascript,React) </p>
+                    <a href="https://gym-fitness-website-sable.vercel.app/#">View Project</a>
                 </div>
                 <div>
                     <img src="images/ChatGPT Image Aug 29, 2025, 11_49_54 PM.png" alt="">
@@ -184,17 +194,13 @@
                     <a href="https://my-portfolio-nandhini.vercel.app/">View Project</a>
                 </div>
                 <div>
-                    <img src="images/gym fitness.png" alt="">
-                    <h3>#3G fitness studio website</h3>
-                    <p>Gym client website using (Html,Css,javascript,React) </p>
-                    <a href="https://gym-fitness-website-sable.vercel.app/#">View Project</a>
-                </div>
-                <div>
                     <img src="images/Screenshot 2026-06-09 135653.png" alt="">
                     <h3>Data Professionals Survey Dashboard</h3>
                     <p>Interactive dashboard Using Power BI.</p>
                     <a href="https://www.linkedin.com/feed/update/urn:li:activity:7470029016125726721/">View Project</a>
                 </div>
+
+
             </div>
             <button id="seeMoreBtn">See More</button>
         </div>
@@ -327,6 +333,44 @@
                 const theme = document.body.classList.contains("light-theme") ? "light" : "dark";
                 localStorage.setItem("theme", theme);
                 updateThemeButton();
+            });
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const seeMoreBtn = document.getElementById("seeMoreBtn");
+            const cards = document.querySelectorAll(".work-list > div");
+            const initialVisibleCards = 3;
+
+            if (!seeMoreBtn || cards.length === 0) {
+                return;
+            }
+
+            let expanded = false;
+
+            function updateCards() {
+                cards.forEach(function (card, index) {
+                    if (!expanded && index >= initialVisibleCards) {
+                        card.classList.add("work-card-hidden");
+                    } else {
+                        card.classList.remove("work-card-hidden");
+                    }
+                });
+
+                seeMoreBtn.textContent = expanded ? "See Less" : "See More";
+            }
+
+            if (cards.length <= initialVisibleCards) {
+                seeMoreBtn.style.display = "none";
+                return;
+            }
+
+            updateCards();
+
+            seeMoreBtn.addEventListener("click", function () {
+                expanded = !expanded;
+                updateCards();
             });
         })();
     </script>
