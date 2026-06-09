@@ -252,16 +252,18 @@ nav ul li a:hover::after {
     margin-top: 30px;
 }
 
-.work-list div {
+.work-list>div {
     background: #1f1f1f;
     border-radius: 12px;
     overflow: hidden;
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.work-list div:hover {
+.work-list>div:hover {
     transform: translateY(-10px);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
 }
@@ -297,6 +299,7 @@ nav ul li a:hover::after {
     font-size: 14px;
     border-radius: 6px;
     transition: 0.3s;
+    margin-top: auto;
 }
 
 .work-list a:hover {
@@ -395,8 +398,10 @@ form textarea {
 }
 
 #seeMoreBtn {
+    display: block;
     margin-top: 40px;
-
+    margin-left: auto;
+    margin-right: auto;
     padding: 10px 20px;
     background: #262626;
 
@@ -406,7 +411,6 @@ form textarea {
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s;
-    margin-left: 46%;
 }
 
 #seeMoreBtn:hover {
