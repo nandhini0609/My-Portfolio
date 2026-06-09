@@ -19,6 +19,7 @@
             <!-- Navigation -->
             <nav>
                 <img src="images/Nandhini__4_-removebg-preview (1).png" alt="Logo" class="logo">
+                <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch theme">Light</button>
                 <!-- Hamburger button -->
                 <div class="hamburger" onclick="toggleMenu()">
                     ☰
@@ -302,6 +303,32 @@
         // Run on load and resize
         window.addEventListener("load", moveImage);
         window.addEventListener("resize", moveImage);
+    </script>
+
+    <script>
+        (function () {
+            const toggleBtn = document.getElementById("themeToggle");
+            const savedTheme = localStorage.getItem("theme");
+
+            if (savedTheme === "light") {
+                document.body.classList.add("light-theme");
+            }
+
+            function updateThemeButton() {
+                const isLight = document.body.classList.contains("light-theme");
+                toggleBtn.textContent = isLight ? "Dark" : "Light";
+                toggleBtn.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+            }
+
+            updateThemeButton();
+
+            toggleBtn.addEventListener("click", function () {
+                document.body.classList.toggle("light-theme");
+                const theme = document.body.classList.contains("light-theme") ? "light" : "dark";
+                localStorage.setItem("theme", theme);
+                updateThemeButton();
+            });
+        })();
     </script>
 
 

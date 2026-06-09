@@ -767,3 +767,126 @@ footer p:hover {
         text-align: center;
     }
 }
+
+/* ===== Theme System ===== */
+:root {
+    --bg: #0a0a0a;
+    --text: #ffffff;
+    --muted-text: #dddddd;
+    --heading: #e0dddd;
+    --surface: #1a1a1a;
+    --surface-2: #1f1f1f;
+    --surface-3: #262626;
+    --nav-mobile-bg: #111111;
+    --tooltip-bg: #333333;
+    --accent: #fb3473;
+    --accent-hover: #ff5a8c;
+    --footer-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    --card-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.light-theme {
+    --bg: #f6f8fb;
+    --text: #1d1f24;
+    --muted-text: #3f4754;
+    --heading: #111827;
+    --surface: #ffffff;
+    --surface-2: #ffffff;
+    --surface-3: #e9edf3;
+    --nav-mobile-bg: #ffffff;
+    --tooltip-bg: #1f2937;
+    --accent: #e11d63;
+    --accent-hover: #c21856;
+    --footer-shadow: 0 8px 20px rgba(30, 41, 59, 0.12);
+    --card-shadow: 0px 10px 25px rgba(17, 24, 39, 0.12);
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+nav ul li a {
+    color: var(--text);
+}
+
+.sub-title {
+    color: var(--heading);
+}
+
+.services-list div {
+    background: var(--surface);
+}
+
+.work-list>div {
+    background: var(--surface-2);
+}
+
+.work-list>div:hover {
+    box-shadow: var(--card-shadow);
+}
+
+.work-list p {
+    color: var(--muted-text);
+}
+
+form input,
+form textarea {
+    background: var(--surface-3);
+    color: var(--text);
+}
+
+#seeMoreBtn {
+    background: var(--surface-3);
+    color: var(--text);
+}
+
+.social-icons-left a::after {
+    background: var(--tooltip-bg);
+}
+
+footer {
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: var(--footer-shadow);
+}
+
+.hamburger {
+    color: var(--text);
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        background: var(--nav-mobile-bg);
+    }
+}
+
+.theme-toggle {
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--text);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--accent);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        order: 2;
+        margin-left: auto;
+        margin-right: 12px;
+    }
+
+    .hamburger {
+        order: 3;
+    }
+}
