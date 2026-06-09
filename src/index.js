@@ -8,11 +8,11 @@ import { ThemeProvider } from './ThemeContext';
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
-	<React.StrictMode>
-		<BrowserRouter>
-			<ThemeProvider>
-				<App />
-			</ThemeProvider>
-		</BrowserRouter>
-	</React.StrictMode>
+    <React.StrictMode>
+        <BrowserRouter>
+            <ThemeProvider>
+                <App />
+            </ThemeProvider>
+        </BrowserRouter>
+    </React.StrictMode>
 );
